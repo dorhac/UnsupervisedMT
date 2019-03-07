@@ -265,8 +265,8 @@ class Decoder(nn.Module):
                 logger.info("Sharing decoder projection matrices")
                 for i in range(1, self.n_langs):
                     proj[i].bias = proj[0].bias
-        print('pre elif')
         elif self.share_output_emb:
+            print('pre elif')
             assert self.share_lang_emb
             logger.info("Sharing decoder projection matrices")
             for i in range(1, self.n_langs):

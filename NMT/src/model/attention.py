@@ -264,7 +264,9 @@ class Decoder(nn.Module):
                 assert self.share_output_emb
                 logger.info("Sharing decoder projection matrices")
                 for i in range(1, self.n_langs):
+                    logger.info("pre elif",self.n_langs)
                     proj[i].bias = proj[0].bias
+                logger.info("end4")
         elif self.share_output_emb:
             logger.info("pre elif")
             assert self.share_lang_emb

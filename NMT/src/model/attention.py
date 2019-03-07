@@ -265,15 +265,19 @@ class Decoder(nn.Module):
                 logger.info("Sharing decoder projection matrices")
                 for i in range(1, self.n_langs):
                     proj[i].bias = proj[0].bias
+        print('pre elif')
         elif self.share_output_emb:
             assert self.share_lang_emb
             logger.info("Sharing decoder projection matrices")
             for i in range(1, self.n_langs):
                 proj[i].weight = proj[0].weight
                 proj[i].bias = proj[0].bias
+        print('nn')
         self.proj = nn.ModuleList(proj)
+        print('logSoft')
 
         self.log_sm = torch.nn.LogSoftmax()
+        print('fin')
 
     def get_attention(self, latent, h_t, y_t, mask, lang_id):
         """

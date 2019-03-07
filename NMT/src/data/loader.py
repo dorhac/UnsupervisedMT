@@ -476,7 +476,7 @@ def check_all_data_params(params):
         assert 0 <= params.word_blank < 1
 
 
-def load_data(params, mono_only=False):
+def load_data(params, mono_only=True):
     """
     Load parallel / monolingual data.
     We start with the parallel test set, which defines the dictionaries.

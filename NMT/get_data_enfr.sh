@@ -50,8 +50,8 @@ FASTTEXT_DIR=$TOOLS_PATH/fastText
 FASTTEXT=$FASTTEXT_DIR/fasttext
 
 # files full paths
-SRC_RAW=all.en
-TGT_RAW=all.fr
+SRC_RAW=$PWD/all.en
+TGT_RAW=$PWD/all.fr
 SRC_TOK=$MONO_PATH/all.en.tok
 TGT_TOK=$MONO_PATH/all.fr.tok
 BPE_CODES=$MONO_PATH/bpe_codes

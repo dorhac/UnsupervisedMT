@@ -256,7 +256,10 @@ class Decoder(nn.Module):
 
         # projection layers
         proj = [nn.Linear(proj_output_dim, n_words) for n_words in self.n_words]
+        logger.info("right nefore if state,emt")
+        print("right nefore if state,emt")
         if self.share_decpro_emb:
+            print("executing if body")
             logger.info("Sharing input embeddings and projection matrix in the decoder")
             for i in range(self.n_langs):
                 proj[i].weight = self.embeddings[i].weight
@@ -268,6 +271,7 @@ class Decoder(nn.Module):
                     proj[i].bias = proj[0].bias
                 logger.info("end4")
         elif self.share_output_emb:
+            print("executing elif body")
             logger.info("pre elif")
             assert self.share_lang_emb
             logger.info("Sharing decoder projection matrices")

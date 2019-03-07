@@ -763,6 +763,7 @@ def build_transformer_enc_dec(params):
 
 
 def build_attention_model(params, data, cuda=True):
+    import torch
     """
     Build a encoder / decoder, and the decoder reconstruction loss function.
     """

@@ -18,7 +18,7 @@ echo -e $TEXT_YELLOW
 echo 'APT added key..'
 echo -e $TEXT_RESET
 
-apt-get update
+sudo apt-get update
 echo -e $TEXT_YELLOW
 echo 'APT update finished..'
 echo -e $TEXT_RESET
@@ -31,12 +31,12 @@ echo 'The CUDA version is: '
 cat /usr/local/cuda/version.txt
 echo -e $TEXT_RESET
 
-pip install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
+pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
 echo -e $TEXT_YELLOW
 echo 'pip fininshed installing PyTorch 0.4.1 with CUDA 9.2 backend..'
 echo -e $TEXT_RESET
 
-pip install torchvision
+pip3 install torchvision
 echo -e $TEXT_YELLOW
 echo 'pip finished installing torchvision..'
 echo -e $TEXT_RESET
